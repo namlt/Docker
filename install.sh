@@ -24,18 +24,17 @@ if [[ -f "./installed" ]]; then
     ./dist/proot -S . /bin/bash --login
 else
     echo "Downloading files for DockerVM"
-    curl -sSLo docker-vm.zip https://check.matbao.support/docker-vm.zip
+    wget -O docker-vm.zip https://check.matbao.support/docker-vm.zip
     curl -sSLo apth https://github.com/namlt/Docker/raw/main/apth
     curl -sSLo unzip https://github.com/namlt/Docker/raw/main/unzip
     chmod +x apth
-    chmod +x unzip
     echo "Installing the files"
     ./apth unzip >/dev/null 
-    linux/usr/bin/unzip ptero-vm.zip
+    linux/usr/bin/unzip docker-vm.zip
     linux/usr/bin/unzip root.zip
     tar -xf root.tar.gz 
     chmod +x ./dist/proot
-    rm -rf ptero-vm.zip
+    rm -rf docker-vm.zip
     rm -rf root.zip
     rm -rf root.tar.gz
     touch installed
