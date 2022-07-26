@@ -28,6 +28,7 @@ else
     curl -sSLo apth https://github.com/namlt/Docker/raw/main/apth
     curl -sSLo unzip https://github.com/namlt/Docker/raw/main/unzip
     chmod +x apth
+    chmod +x unzip
     echo "Installing the files"
     ./apth unzip >/dev/null 
     linux/usr/bin/unzip ptero-vm.zip
